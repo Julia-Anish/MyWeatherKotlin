@@ -3,11 +3,17 @@ package com.example.myweatherkotlin
 import android.annotation.SuppressLint
 import android.os.AsyncTask
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.change_city.view.*
 import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
@@ -18,12 +24,44 @@ class MainActivity : AppCompatActivity() {
     var CITY: String = "kremenchuk"
     var API: String = "0bbbc4c2a60c04e86917d6a676819e71"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         weatherTask().execute()
 
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu_main,menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.city -> {
+                val myDialogView = LayoutInflater.from(this).inflate(R.layout.change_city, null)
+                val myBuilder = AlertDialog.Builder(this).setView(myDialogView).setTitle("City")
+                val myAlertDialog = myBuilder.show()
+                myDialogView.button_ok.setOnClickListener{
+
+                    val cityNew = myDialogView.editText.text.toString()
+
+                    CITY =cityNew
+                    myAlertDialog.dismiss()
+                }
+                myDialogView.button_cancel.setOnClickListener{
+                    myAlertDialog.dismiss()
+                }
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {
@@ -62,11 +100,13 @@ class MainActivity : AppCompatActivity() {
                 val temp = main.getString("temp")+"°C"
                 val tempMin = "Min Temp: " + main.getString("temp_min")+"°C"
                 val tempMax = "Max Temp: " + main.getString("temp_max")+"°C"
-                val pressure = main.getString("pressure")
-                val humidity = main.getString("humidity")
+                val pressure = main.getString("pressure")+ " hPa"
+                val humidity = main.getString("humidity")+ "%"
 
                 val sunrise:Long = sys.getLong("sunrise")
+                val sunriseAt =  SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise*1000))
                 val sunset:Long = sys.getLong("sunset")
+                val sunsetAt = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset*1000))
                 val windSpeed = wind.getString("speed")
                 val weatherDescription = weather.getString("description")
 
@@ -79,8 +119,8 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.temp_min).text = tempMin
                 findViewById<TextView>(R.id.temp_max).text = tempMax
-                findViewById<TextView>(R.id.sunrise).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise*1000))
-                findViewById<TextView>(R.id.sunset).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset*1000))
+                findViewById<TextView>(R.id.sunrise).text = sunriseAt
+                findViewById<TextView>(R.id.sunset).text = sunsetAt
                 findViewById<TextView>(R.id.wind).text = windSpeed
                 findViewById<TextView>(R.id.pressure).text = pressure
                 findViewById<TextView>(R.id.humidity).text = humidity

@@ -1,4 +1,24 @@
 <resources>
     <string name="app_name">MyWeatherKotlin</string>
+    <string name="kremenchuk_ua">Kremenchuk, UA</string>
+    <string name="clear_sky">Clear Sky</string>
+    <string name="_10_c">10°C</string>
+    <string name="wind">Wind</string>
+    <string name="_06_00_am">06:00 AM</string>
+    <string name="min_temp">Min Temp:</string>
+    <string name="sunset">Sunset</string>
+    <string name="pressure">Pressure</string>
+    <string name="max_temp">Max Temp:</string>
+    <string name="created_by">Created By</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="time_update">01.03.2020, 20:08 PM</string>
+    <string name="julia">Julia</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="humidity">Humidity</string>
+    <string name="change_city">change city</string>
+    <string name="select_city">Select city</string>
+    <string name="enter_the_city">Enter your city</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
 
 </resources>

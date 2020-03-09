@@ -17,18 +17,20 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
+
             <TextView
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Kremenchuk, UA"/>
+                android:text="@string/kremenchuk_ua"
+                android:textSize="24sp" />
+
             <TextView
                 android:id="@+id/updated_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10sp"
-                android:text="01.03.2020, 20:08 PM"/>
+                android:text="@string/time_update"
+                android:textSize="16sp" />
         </LinearLayout>
 
 
@@ -45,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_gravity="center"
-                android:text="Clear Sky"/>
+                android:text="@string/clear_sky"/>
             <TextView
                 android:id="@+id/temp"
                 android:layout_width="wrap_content"
@@ -53,7 +55,7 @@
                 android:textSize="70sp"
                 android:fontFamily="sans-serif-thin"
                 android:layout_gravity="center"
-                android:text="10°C"/>
+                android:text="@string/_10_c"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,14 +66,14 @@
                     android:id="@+id/temp_min"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min Temp: "/>
+                    android:text="@string/min_temp"/>
                 <Space android:layout_width="50dp" android:layout_height="wrap_content"/>
 
                 <TextView
                     android:id="@+id/temp_max"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp: "/>
+                    android:text="@string/max_temp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -100,19 +102,20 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/sunrise"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/sunrise"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Sunrise"/>
+                        android:text="@string/sunrise"/>
                     <TextView
                         android:id="@+id/sunrise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:00 AM"/>
+                        android:text="@string/_06_00_am"/>
                 </LinearLayout>
                 <Space android:layout_width="10dp" android:layout_height="wrap_content"/>
                 <LinearLayout
@@ -127,18 +130,19 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/sunset"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/sunset"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Sunset"/>
+                        android:text="@string/sunset"/>
                     <TextView
                         android:id="@+id/sunset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:00 AM"/>
+                        android:text="@string/_06_00_am"/>
                 </LinearLayout>
                 <Space android:layout_width="10dp" android:layout_height="wrap_content"/>
                 <LinearLayout
@@ -153,18 +157,19 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/wind"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/wind"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Wind"/>
+                        android:text="@string/wind"/>
                     <TextView
                         android:id="@+id/wind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:00 AM"/>
+                        android:text="@string/_06_00_am"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -187,19 +192,20 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/pressure"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/pressure"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Pressure"/>
+                        android:text="@string/pressure"/>
                     <TextView
                         android:id="@+id/pressure"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:00 AM"/>
+                        android:text="@string/_06_00_am"/>
                 </LinearLayout>
                 <Space android:layout_width="10dp" android:layout_height="wrap_content"/>
                 <LinearLayout
@@ -214,19 +220,20 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/humidity"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/humidity"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Humidity"/>
+                        android:text="@string/humidity"/>
                     <TextView
                         android:id="@+id/humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="06:00 AM"/>
+                        android:text="@string/_06_00_am"/>
                 </LinearLayout>
                 <Space android:layout_width="10dp" android:layout_height="wrap_content"/>
                 <LinearLayout
@@ -241,19 +248,20 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/info"
-                        android:tint="#FFFFFF"/>
+                        android:tint="#FFFFFF"
+                        android:contentDescription="@string/created_by" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
-                        android:text="Created By"/>
+                        android:text="@string/created_by"/>
                     <TextView
                         android:id="@+id/about"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="Julia"/>
+                        android:text="@string/julia"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -273,7 +281,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"
-        android:text="Something went wrong"/>
+        android:text="@string/something_went_wrong"/>
 
 
 </RelativeLayout>
