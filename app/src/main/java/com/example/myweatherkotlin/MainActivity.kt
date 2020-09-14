@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
                     CITY =cityNew
                     myAlertDialog.dismiss()
+                    weatherTask().execute()
                 }
                 myDialogView.button_cancel.setOnClickListener{
                     myAlertDialog.dismiss()
